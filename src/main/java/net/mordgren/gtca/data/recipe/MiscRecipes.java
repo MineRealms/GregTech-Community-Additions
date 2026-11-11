@@ -264,11 +264,6 @@ public class MiscRecipes {
                 .save(provider);
 
 
-        GTCARecipeTypes.SPACE_PUMP.recipeBuilder("test").duration(200).EUt(VA[LuV])
-                .inputItems(GTCAHelper.getItem("dust", IncoloyDS, 1))
-                .outputFluids(UUMatter.getFluid(1))
-                .save(provider);
-
     }
 
     private static ArrayList<Object[]> Scraps;
