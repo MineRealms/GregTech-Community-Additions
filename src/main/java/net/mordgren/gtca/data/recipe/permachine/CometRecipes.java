@@ -92,11 +92,5 @@ public class CometRecipes {
                 .outputFluids(GTCAMaterials.HydrogenPlasma.getFluid(100))
                 .save(provider);
 
-        SPACE_MINER.recipeBuilder("ha").EUt(30720).duration(100)
-                .inputItems(GTCAItems.HydrogenIon.asStack(1))
-                .outputItems(GTCAItems.GoldNanites.asStack(1024))
-                .CWUt(20)
-                .save(provider);
-
     }
 }

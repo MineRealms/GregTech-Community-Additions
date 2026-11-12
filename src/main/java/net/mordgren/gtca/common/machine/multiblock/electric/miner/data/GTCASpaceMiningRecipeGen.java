@@ -65,6 +65,15 @@ public final class GTCASpaceMiningRecipeGen {
                 continue;
             }
 
+            ItemStack drillTip = MiningParts.drillTip(drill, 4);
+            ItemStack drillRod = MiningParts.drillRod(drill, 4);
+            if (drillTip.isEmpty() || drillRod.isEmpty()) {
+                skipped++;
+                GTCA.LOGGER.warn("[SpaceMining] Missing drill parts: asteroid={} drone={} material={}",
+                        asteroid.id(), drone.name(), drill.material().getName());
+                continue;
+            }
+
             long eutLong = adjustedEUt(asteroid, drone);
             int eut = (int) Math.min(Integer.MAX_VALUE, Math.max(1L, eutLong));
 
@@ -111,8 +120,8 @@ public final class GTCASpaceMiningRecipeGen {
                             .duration(duration)
                             .circuitMeta(asteroid.circuitConfiguration())
                             .notConsumable(drone.droneStack(1))
-                            .inputItems(MiningParts.drillTip(drill, 4))
-                            .inputItems(MiningParts.drillRod(drill, 4))
+                            .inputItems(drillTip.copy())
+                            .inputItems(drillRod.copy())
                             .inputFluids(plasmaStack)
                             .CWUt(asteroid.minCWU())
                             .addData(SpaceMiningRecipeDataKeys.ASTEROID_ID, asteroid.id().toString())

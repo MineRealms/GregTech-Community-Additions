@@ -44,6 +44,10 @@ public class GTCARecipeInit {
             GTCASpaceMiningRecipeGen.generate(provider);
             SpacePumpRecipes.init(provider);
             SpaceChainRecipes.init(provider);
+            SpaceInfrastructureRecipes.init(provider);
+            SpaceModuleRecipes.init(provider);
+            SpaceDroneRecipes.init(provider);
+            SpaceAssemblerRecipes.init(provider);
             SARecipes.init(provider);
             WaterLineRecipes.init(provider);
 
