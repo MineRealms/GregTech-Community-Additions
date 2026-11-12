@@ -6,13 +6,15 @@ dependencies {
 
     compileOnly(libs.jetbrains.annotations)
 
-    jarJar(modApi(forge.gtceu.get()))
+    // The pack supplies GTCEu and its runtime libraries. Keep these on the
+    // compile classpath without copying them into GTCA's Jar-in-Jar payload.
+    modCompileOnly(forge.gtceu.get())
 
     // LDLib
-    jarJar(modApi(forge.ldlib.get()))
+    modCompileOnly(forge.ldlib.get())
 
     // Registrate
-    jarJar(modApi(forge.registrate.get()))
+    modCompileOnly(forge.registrate.get())
 
     // Configuration
     jarJar(modApi(forge.configuration.get()))
@@ -20,8 +22,7 @@ dependencies {
     // Mixin (& Extras)
     annotationProcessor(variantOf(libs.mixin) { classifier("processor") })
     annotationProcessor(forge.mixinExtras.common)
-    api(forge.mixinExtras.common)
-    jarJar(forge.mixinExtras.forge)
+    compileOnly(forge.mixinExtras.common)
 
     testImplementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
