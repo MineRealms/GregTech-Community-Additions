@@ -49,6 +49,7 @@ public final class SpaceChainRecipes {
                 .outputItems(GTCAItems.PIKO_WAFER.asStack(64))
                 .stationResearch(b -> b
                         .researchStack(GTCAItems.QuantumAnomaly.asStack())
+                        .researchId("gtca_space_piko_wafer")
                         .CWUt(128)
                         .EUt(VA[UV]))
                 .save(provider);
@@ -71,6 +72,7 @@ public final class SpaceChainRecipes {
                 .outputItems(GTCAItems.NANOTUBE_SPOOL.asStack())
                 .stationResearch(b -> b
                         .researchStack(GTCAItems.CarbonNanites.asStack())
+                        .researchId("gtca_space_nanotube_spool")
                         .CWUt(128)
                         .EUt(VA[UV]))
                 .save(provider);
